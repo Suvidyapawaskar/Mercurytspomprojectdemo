@@ -36,6 +36,7 @@ public class Loginpage
 	
 	public void enterPassword(String password)
 	{
+		System.out.println("In enterPassword method")
 		objPassword.sendKeys(password);
 		System.out.println("Password is entered successfully");
 	}
