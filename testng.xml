@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Verify that valid user able to login into Mercury tours application by using valid username and password">
+   <parameter name="browser" value="chrome"></parameter>
+   <parameter name="url" value="http://newtours.demoaut.com/mercurywelcome.php"></parameter>
+   <parameter name="timeoutseconds" value="15"></parameter>
+   <parameter name="usernm" value="Suvidyap1"></parameter>
+   <parameter name="passwd" value="P@ssword1"></parameter>
+    <classes>
+      <class name="mt.mstr.modules.Launch">
+      <methods>
+      <include name="ExecuteLaunch"></include>
+      </methods>
+      </class>
+      <class name="mt.mstr.modules.Login">
+      <methods>
+      <include name="ExecuteLoginwithvalidds"></include>
+      </methods>      
+      </class>   
+      <class name="mt.mstr.utility.CloseBrowser">
+      <methods>
+      <include name="closeBrowser"></include>
+      </methods>
+      </class>   
+    </classes>
+  </test> <!-- Mercurytspomprojecttest -->
+  
+  <test thread-count="5" name="Verify that invalid user not able to login into Mercury tours application by using invalid username and password">
+   <parameter name="browser" value="chrome"></parameter>
+   <parameter name="url" value="http://newtours.demoaut.com/mercurywelcome.php"></parameter>
+   <parameter name="timeoutseconds" value="15"></parameter>
+    <parameter name="invalidusernm" value="Suvidyap"></parameter>
+    <parameter name="invalidpasswd" value="P@ssword"></parameter>
+    <classes>
+     <class name="mt.mstr.modules.Launch">
+      <methods>
+      <include name="ExecuteLaunch"></include>
+      </methods>
+      </class>
+      <class name="mt.mstr.modules.Login">
+      <methods>
+      <include name="ExecuteLoginwithinvalidds"></include>
+      </methods>      
+      </class>  
+      <class name="mt.mstr.utility.CloseBrowser">
+      <methods>
+      <include name="closeBrowser"></include>
+      </methods>
+      </class> 
+    </classes>
+  </test> <!-- Mercurytspomprojecttest -->
+</suite> <!-- Suite -->
